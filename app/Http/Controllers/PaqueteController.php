@@ -35,7 +35,7 @@ class PaqueteController extends Controller
     {
         // 1. Validar campos requeridos y formatos (400 Bad Request) PRIMERO
         $validator = Validator::make($request->all(), [
-            'codigo'       => 'required|string|max:30',
+            'codigo'=>'required|string|max:30|alpha_num',
             'destinatario' => 'required|string|max:100',
             'fechaIngreso' => 'required|date_format:Y-m-d',
         ]);
